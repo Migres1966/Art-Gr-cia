@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="va" id="exe-20260905185818000068">
+<head>
+<meta charset="utf-8">
+<meta name="generator" content="eXeLearning v4.0.3">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3. Arquitectura i ordres | SA03 · Grècia: la mesura de l’ésser humà</title>
+<link rel="icon" type="image/x-icon" href="../libs/favicon.ico">
+<meta name="description" content="Situació d’aprenentatge visual i interactiva sobre l’art grec per a 2n de Batxillerat i preparació PAU.">
+<script>document.querySelector("html").classList.add("js");</script><script src="../libs/jquery/jquery.min.js"> </script><script src="../libs/common_i18n.js"> </script><script src="../libs/common.js"> </script><script src="../libs/exe_export.js"> </script><script>window.exeXapi={"odeId":"20260905185818000384","packageTitle":"SA03 · Grècia: la mesura de l’ésser humà","language":"va"};</script><script src="../libs/xapi/exe_xapi.js"> </script><script src="../search_index.js"> </script><script src="../libs/bootstrap/bootstrap.bundle.min.js"> </script><link rel="stylesheet" href="../libs/bootstrap/bootstrap.min.css">
+<script src="../idevices/text/text.js"></script><link rel="stylesheet" href="../idevices/text/text.css">
+<script src="../libs/exe_atools/exe_atools.js"> </script><link rel="stylesheet" href="../libs/exe_atools/exe_atools.css">
+<link rel="stylesheet" href="../content/css/base.css"><script src="../theme/style.js"> </script><link rel="stylesheet" href="../theme/style.css">
+<!-- SA03 · GRÈCIA: LA MESURA DE L’ÉSSER HUMÀ
+     Enganxa tot este bloc en: Propietats → Avançat → HEAD
+     Compatible amb eXeLearning 4.x, exportació web i Moodle/SCORM. -->
+
+<meta name="theme-color" content="#102b3f">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ================================================================
+   GREGORI ART · SA03 GRÈCIA
+   Identitat editorial: mar Egeu + pedra + bronze + or
+   ================================================================ */
+
+:root {
+  --ga-ink: #17212b;
+  --ga-muted: #566574;
+  --ga-navy: #102b3f;
+  --ga-aegean: #087e8b;
+  --ga-aegean-2: #0aa6a6;
+  --ga-gold: #d7a640;
+  --ga-gold-soft: #f4e2ad;
+  --ga-terracotta: #bb5b3e;
+  --ga-paper: #fbf9f4;
+  --ga-sand: #f2ede2;
+  --ga-white: #ffffff;
+  --ga-line: #dce3e6;
+  --ga-success: #39724f;
+  --ga-danger: #a84438;
+  --ga-radius: 20px;
+  --ga-radius-sm: 12px;
+  --ga-shadow: 0 18px 55px rgba(16,43,63,.12);
+  --ga-shadow-sm: 0 8px 24px rgba(16,43,63,.09);
+  --ga-max: 1120px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  color: var(--ga-ink);
+  background:
+    radial-gradient(circle at 8% 4%, rgba(10,166,166,.10), transparent 25rem),
+    radial-gradient(circle at 92% 12%, rgba(215,166,64,.10), transparent 24rem),
+    var(--ga-paper);
+  font-family: "Inter", "Aptos", "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.68;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contenidor principal d’eXe */
+#content, #main, main, .main, .page, .exe-content {
+  min-width: 0;
+}
+
+#content, #main-wrapper, .exe-content {
+  max-width: 100%;
+}
+
+.grec,
+.sa.grec {
+  width: min(var(--ga-max), calc(100% - 28px));
+  margin: 22px auto 42px;
+  padding: clamp(22px, 4vw, 52px);
+  color: var(--ga-ink);
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(16,43,63,.10);
+  border-radius: 28px;
+  box-shadow: var(--ga-shadow);
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.grec *, .grec *::before, .grec *::after { box-sizing: border-box; }
+.grec img, .grec video, .grec iframe { max-width: 100%; }
+
+/* Tipografia i jerarquia */
+.grec h1, .grec h2, .grec h3, .grec h4,
+.grec .hero h2, .grec summary {
+  font-family: "Manrope", "Inter", "Aptos Display", sans-serif;
+  text-wrap: balance;
+}
+
+.grec > h2 {
+  max-width: 900px;
+  margin: 0 0 1.55rem;
+  color: var(--ga-navy);
+  font-size: clamp(2rem, 4.7vw, 3.75rem);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.04;
+}
+
+.grec > h2::after {
+  content: "";
+  display: block;
+  width: 96px;
+  height: 7px;
+  margin-top: .8rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--ga-gold), var(--ga-aegean));
+}
+
+.grec h3 {
+  margin: 2.1rem 0 .85rem;
+  color: var(--ga-navy);
+  font-size: clamp(1.28rem, 2.3vw, 1.72rem);
+  font-weight: 800;
+  letter-spacing: -.025em;
+  line-height: 1.22;
+}
+
+.grec h4 { color: var(--ga-aegean); font-weight: 800; }
+.grec p { margin: .6rem 0 1rem; }
+.grec strong { font-weight: 800; }
+.grec em { text-decoration-color: var(--ga-gold); }
+.grec ::selection { color: var(--ga-navy); background: var(--ga-gold-soft); }
+
+/* Portada editorial */
+.grec .hero,
+.grec .greekhero {
+  min-height: 430px;
+  margin: calc(clamp(22px,4vw,52px) * -1) calc(clamp(22px,4vw,52px) * -1) 2rem;
+  padding: clamp(34px, 7vw, 76px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: var(--ga-white);
+  background:
+    linear-gradient(118deg, rgba(10,31,48,.97), rgba(8,126,139,.91) 62%, rgba(187,91,62,.84)),
+    linear-gradient(45deg, #102b3f, #087e8b);
+}
+
+.grec .hero::before {
+  content: "GRÈCIA  ·  MESURA  ·  POLIS";
+  position: absolute;
+  top: 25px;
+  left: clamp(34px, 7vw, 76px);
+  color: var(--ga-gold-soft);
+  font-size: .76rem;
+  font-weight: 900;
+  letter-spacing: .22em;
+  z-index: -1;
+}
+
+.grec .hero::after {
+  content: "";
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  right: -110px;
+  top: -135px;
+  border: 72px solid rgba(244,226,173,.16);
+  border-radius: 50%;
+  z-index: -2;
+}
+
+.grec .hero h2 {
+  max-width: 900px;
+  margin: 0 0 .75rem;
+  color: white;
+  font-size: clamp(2.8rem, 7.2vw, 6rem);
+  font-weight: 800;
+  letter-spacing: -.065em;
+  line-height: .94;
+}
+
+.grec .hero p:not(.small) {
+  max-width: 780px;
+  margin-bottom: 1.2rem;
+  color: rgba(255,255,255,.9);
+  font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.grec .small { color: var(--ga-muted); font-size: .86rem; }
+.grec .hero .small { color: rgba(255,255,255,.72); }
+
+/* Etiquetes */
+.grec .meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin: 0 0 1.35rem;
+}
+
+.grec .tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: .37rem .78rem;
+  color: var(--ga-navy);
+  background: var(--ga-gold-soft);
+  border: 1px solid rgba(16,43,63,.08);
+  border-radius: 999px;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+.grec .hero .tag {
+  color: white;
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.23);
+  backdrop-filter: blur(8px);
+}
+
+/* Blocs destacats */
+.grec .repte, .grec .clau, .grec .alerta, .grec .docent {
+  margin: 1.25rem 0;
+  padding: 1.2rem 1.4rem 1.2rem 1.65rem;
+  border: 0;
+  border-left: 6px solid;
+  border-radius: 16px;
+  box-shadow: var(--ga-shadow-sm);
+}
+
+.grec .repte { border-color: var(--ga-aegean); background: #e8f5f4; }
+.grec .clau { border-color: var(--ga-gold); background: #fff8e8; }
+.grec .alerta { border-color: var(--ga-terracotta); background: #fff0eb; }
+.grec .docent { border-color: #667085; background: #f1f3f5; }
+
+/* Graelles i targetes */
+.grec .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+  gap: 1rem;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.grec .card {
+  min-width: 0;
+  padding: 1.3rem;
+  background: linear-gradient(155deg, #fff, #fbfaf7);
+  border: 1px solid var(--ga-line);
+  border-top: 6px solid var(--ga-gold);
+  border-radius: var(--ga-radius);
+  box-shadow: var(--ga-shadow-sm);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.grec .card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(8,126,139,.35);
+  box-shadow: 0 15px 34px rgba(16,43,63,.14);
+}
+
+.grec .card h3 { margin: .2rem 0 .6rem; font-size: 1.2rem; }
+.grec .num { color: var(--ga-aegean); font-size: 2.1rem; font-weight: 900; opacity: .82; }
+
+/* Itineraris i passos */
+.grec .route, .grec .steps {
+  counter-reset: ga-step;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: .8rem;
+  padding: 0;
+  list-style: none;
+}
+
+.grec .route li, .grec .steps li {
+  counter-increment: ga-step;
+  min-height: 95px;
+  padding: 1rem 1rem 1rem 3.8rem;
+  position: relative;
+  background: var(--ga-sand);
+  border: 1px solid #e5dece;
+  border-radius: 16px;
+}
+
+.grec .route li::before, .grec .steps li::before {
+  content: counter(ga-step);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: var(--ga-aegean);
+  border-radius: 50%;
+  font-weight: 900;
+  box-shadow: 0 0 0 5px rgba(8,126,139,.11);
+}
+
+/* Espais editables d’imatge */
+.grec .image-slot {
+  min-height: 230px;
+  margin: 1.45rem 0 2rem;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: minmax(190px, 40%) 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  color: var(--ga-navy);
+  background: linear-gradient(135deg, #fbf5e8, #e9f3f2);
+  border: 2px dashed rgba(8,126,139,.55);
+  border-radius: var(--ga-radius);
+}
+
+.grec .image-slot strong {
+  display: block;
+  margin-bottom: .25rem;
+  color: var(--ga-navy);
+  font-family: "Manrope", sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: .08em;
+}
+
+.grec .image-slot p { margin: .25rem 0; font-weight: 700; }
+.grec .image-slot small { color: var(--ga-muted); }
+.grec .slot-art {
+  min-height: 175px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, #102b3f, #167f89);
+  border-radius: 14px;
+}
+.grec .slot-art::before {
+  content: "";
+  position: absolute;
+  width: 76px; height: 76px; left: 18%; top: 18%;
+  background: var(--ga-gold);
+  border-radius: 50%;
+}
+.grec .slot-art span, .grec .slot-art i, .grec .slot-art b {
+  position: absolute;
+  bottom: -17%;
+  width: 65%; height: 70%;
+  background: #c79845;
+  border-radius: 10px;
+  transform: rotate(42deg);
+}
+.grec .slot-art span { left: -15%; }
+.grec .slot-art i { right: -8%; height: 55%; background: #ead9af; }
+.grec .slot-art b { right: -34%; height: 88%; background: #4e7d83; }
+
+/* Imatges reals que inserisques */
+.grec figure {
+  margin: 1.5rem 0;
+  padding: .6rem;
+  background: white;
+  border: 1px solid var(--ga-line);
+  border-radius: var(--ga-radius);
+  box-shadow: var(--ga-shadow-sm);
+}
+.grec figure img, .grec img.ga-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 14px;
+}
+.grec figcaption {
+  padding: .75rem .65rem .35rem;
+  color: var(--ga-muted);
+  font-size: .86rem;
+}
+
+/* Taules responsives */
+.grec table {
+  width: 100%;
+  margin: 1.2rem 0 1.7rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--ga-line);
+  border-radius: 15px;
+  box-shadow: var(--ga-shadow-sm);
+}
+.grec th {
+  padding: .9rem 1rem;
+  color: white;
+  background: var(--ga-navy);
+  border: 0;
+  text-align: left;
+  font-size: .9rem;
+  letter-spacing: .015em;
+}
+.grec td {
+  padding: .85rem 1rem;
+  border: 0;
+  border-top: 1px solid var(--ga-line);
+  vertical-align: top;
+}
+.grec tbody tr:nth-child(even) td { background: #f7faf9; }
+.grec tbody tr:hover td { background: #fff8e8; }
+
+/* Desplegables teòrics i fitxes PAU */
+.grec details {
+  margin: .8rem 0;
+  overflow: hidden;
+  background: white;
+  border: 1px solid var(--ga-line);
+  border-radius: 15px;
+  box-shadow: var(--ga-shadow-sm);
+}
+.grec summary {
+  padding: 1rem 3.4rem 1rem 1.2rem;
+  position: relative;
+  cursor: pointer;
+  color: var(--ga-navy);
+  background: linear-gradient(90deg, #f7efdc, #edf6f5);
+  font-weight: 800;
+  list-style: none;
+}
+.grec summary::-webkit-details-marker { display: none; }
+.grec summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%; right: 1rem;
+  width: 1.85rem; height: 1.85rem;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  color: white;
+  background: var(--ga-aegean);
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+.grec details[open] summary::after { content: "−"; background: var(--ga-terracotta); }
+.grec details > :not(summary) { margin-left: 1.25rem; margin-right: 1.25rem; }
+.grec details > :last-child { margin-bottom: 1.2rem; }
+.grec .work summary { border-left: 6px solid var(--ga-gold); }
+.grec .workgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .15rem 1.35rem;
+  padding: 1rem 0;
+}
+.grec .workgrid p { margin: .35rem 0; }
+.grec .workgrid p:last-child { grid-column: 1 / -1; }
+
+/* Activitats autocorrectives */
+.grec .quiz {
+  margin: 1.6rem 0;
+  padding: 1.35rem;
+  position: relative;
+  background: #f0f7f6;
+  border: 1px solid #cfe2df;
+  border-radius: var(--ga-radius);
+  box-shadow: var(--ga-shadow-sm);
+}
+.grec .quiz::before {
+  content: "COMPROVA’T";
+  display: inline-block;
+  margin-bottom: .65rem;
+  padding: .25rem .6rem;
+  color: white;
+  background: var(--ga-aegean);
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+.grec .quiz label {
+  display: block;
+  margin: .55rem 0;
+  padding: .75rem .9rem;
+  cursor: pointer;
+  background: white;
+  border: 1px solid var(--ga-line);
+  border-radius: 11px;
+  transition: border-color .15s ease, background .15s ease;
+}
+.grec .quiz label:hover { background: #fffaf0; border-color: var(--ga-gold); }
+.grec .quiz input { margin-right: .5rem; accent-color: var(--ga-aegean); }
+.grec button, .grec .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  margin: .45rem .35rem .25rem 0;
+  padding: .62rem 1rem;
+  color: white !important;
+  background: var(--ga-aegean);
+  border: 0;
+  border-radius: 11px;
+  box-shadow: 0 5px 14px rgba(8,126,139,.2);
+  font: 800 .9rem "Inter", sans-serif;
+  text-decoration: none !important;
+  cursor: pointer;
+}
+.grec button:hover, .grec .btn:hover { background: var(--ga-navy); transform: translateY(-1px); }
+.grec button:focus-visible, .grec .btn:focus-visible, .grec summary:focus-visible {
+  outline: 4px solid rgba(215,166,64,.45);
+  outline-offset: 3px;
+}
+.grec .feedback { margin: .7rem 0 0; padding: .6rem .8rem; border-radius: 9px; font-weight: 800; }
+.grec .feedback:empty { display: none; }
+.grec .feedback.ok { color: #245b3b; background: #e3f3e8; }
+.grec .feedback.ko { color: #8c332b; background: #fbe8e5; }
+
+/* Percentatges d’avaluació */
+.grec .weights {
+  display: grid;
+  grid-template-columns: minmax(0,8fr) minmax(120px,1.5fr) minmax(95px,.8fr);
+  gap: .5rem;
+  margin: 1.1rem 0 1.6rem;
+  overflow: hidden;
+  border-radius: 16px;
+}
+.grec .weight {
+  min-height: 122px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.grec .weight strong { font-size: 2rem; }
+.grec .weight span { font-size: .88rem; font-weight: 800; }
+.grec .w80 { background: var(--ga-navy); }
+.grec .w15 { background: var(--ga-aegean); }
+.grec .w5 { background: var(--ga-terracotta); }
+
+/* Navegació d’eXeLearning */
+#siteNav, #siteNav ul, #siteNav li { box-sizing: border-box; }
+#siteNav { font-family: "Inter", sans-serif; }
+#siteNav a {
+  border-radius: 9px;
+  transition: background .18s ease, color .18s ease;
+}
+#siteNav a:hover { color: var(--ga-navy); background: var(--ga-gold-soft); }
+#siteNav .active > a, #siteNav a.active {
+  color: white;
+  background: var(--ga-aegean);
+  font-weight: 800;
+}
+
+/* Accessibilitat i adaptació */
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .grec, .sa.grec { width: calc(100% - 14px); margin: 7px auto 25px; padding: 20px; border-radius: 18px; }
+  .grec .hero, .grec .greekhero { min-height: 360px; margin: -20px -20px 1.4rem; padding: 32px 22px; }
+  .grec .hero::before { left: 22px; letter-spacing: .13em; }
+  .grec .hero h2 { font-size: clamp(2.5rem, 14vw, 4rem); }
+  .grec .image-slot { grid-template-columns: 1fr; }
+  .grec .slot-art { min-height: 145px; }
+  .grec .workgrid { grid-template-columns: 1fr; }
+  .grec .workgrid p:last-child { grid-column: auto; }
+  .grec .weights { grid-template-columns: 1fr; }
+  .grec .weight { min-height: auto; }
+  .grec table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .grec .card:hover { transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+@media (prefers-contrast: more) {
+  .grec { border: 2px solid var(--ga-navy); }
+  .grec .card, .grec details, .grec table { border-color: var(--ga-navy); }
+}
+
+@media print {
+  body { background: white; font-size: 11pt; }
+  #siteNav, #header, #footer, .toggle-idevice { display: none !important; }
+  .grec, .sa.grec { width: 100%; margin: 0; padding: 0; border: 0; box-shadow: none; }
+  .grec .hero { min-height: 220px; margin: 0 0 20px; padding: 30px; print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .grec .hero h2 { font-size: 34pt; }
+  .grec .card, .grec details, .grec table, .grec .quiz { box-shadow: none; break-inside: avoid; }
+  .grec details { display: block; }
+  .grec details > * { display: block !important; }
+  .grec .image-slot { min-height: 110px; grid-template-columns: 32% 1fr; }
+  .grec button { display: none; }
+  .grec a { color: black !important; text-decoration: underline !important; }
+}
+
+/* ================================================================
+   CORRECCIÓ RESPONSIVE CRÍTICA PER A eXe / MOODLE / IFRAME
+   Ha d'estar al final: anul·la amplades heretades del tema d'eXe.
+   ================================================================ */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body, #content, #main, #main-wrapper, #node-content,
+.exe-content, .exe-single-page, .page, .box,
+.iDevice_wrapper, .iDevice_content, .iDevice_inner,
+.exe-text-template, .textIdeviceContent, .exe-text-activity {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.grec, .sa.grec {
+  width: calc(100% - 24px) !important;
+  max-width: var(--ga-max) !important;
+  min-width: 0 !important;
+}
+
+.grec .grid, .grec .route, .grec .steps,
+.grec .workgrid, .grec .weights, .grec .image-slot {
+  min-width: 0 !important;
+}
+
+.grec .grid > *, .grec .route > *, .grec .steps > *,
+.grec .workgrid > *, .grec .weights > *, .grec .image-slot > * {
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.grec img, .grec svg, .grec canvas, .grec video {
+  display: block !important;
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+.grec iframe {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 260px;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.grec p, .grec li, .grec td, .grec th,
+.grec summary, .grec a, .grec strong {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+@media (max-width: 980px) {
+  #main-wrapper, #main, #content, #node-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .grec .grid,
+  .grec .route,
+  .grec .steps,
+  .grec .workgrid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .grec .workgrid p:last-child { grid-column: auto !important; }
+
+  .grec .weights {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .grec .weight { min-height: auto !important; }
+
+  .grec .image-slot {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .grec table {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    white-space: normal !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .grec th, .grec td {
+    min-width: 145px;
+    white-space: normal !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body { font-size: 15.5px !important; }
+
+  .grec, .sa.grec {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 18px !important;
+    padding: 16px !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .grec .hero, .grec .greekhero {
+    width: auto !important;
+    min-height: 330px !important;
+    margin: -16px -16px 1.3rem !important;
+    padding: 62px 18px 28px !important;
+  }
+
+  .grec .hero::before {
+    top: 20px !important;
+    left: 18px !important;
+    right: 18px !important;
+    font-size: .65rem !important;
+    letter-spacing: .11em !important;
+  }
+
+  .grec .hero::after {
+    width: 260px !important;
+    height: 260px !important;
+    right: -110px !important;
+    top: -100px !important;
+    border-width: 48px !important;
+  }
+
+  .grec .hero h2 {
+    max-width: 100% !important;
+    font-size: clamp(2.2rem, 13vw, 3.45rem) !important;
+    line-height: .98 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .grec > h2 {
+    max-width: 100% !important;
+    font-size: clamp(1.85rem, 10.5vw, 2.7rem) !important;
+    line-height: 1.03 !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .grec .meta { gap: .4rem !important; }
+  .grec .tag { font-size: .7rem !important; padding: .3rem .6rem !important; }
+  .grec .card { padding: 1rem !important; }
+  .grec .repte, .grec .clau, .grec .alerta, .grec .docent {
+    padding: 1rem 1rem 1rem 1.15rem !important;
+  }
+  .grec .route li, .grec .steps li {
+    min-height: 0 !important;
+    padding: .9rem .9rem .9rem 3.45rem !important;
+  }
+  .grec .image-slot { padding: .9rem !important; }
+  .grec .slot-art { min-height: 130px !important; }
+  .grec summary { padding: .9rem 3rem .9rem 1rem !important; }
+  .grec details > :not(summary) { margin-left: 1rem !important; margin-right: 1rem !important; }
+  .grec button, .grec .btn {
+    width: 100% !important;
+    margin: .35rem 0 !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+  .grec th, .grec td { min-width: 125px; padding: .68rem !important; }
+}
+</style>
+
+<!-- PEU DE PÀGINA AUTOMÀTIC -->
+<style>
+.gregori-footer {
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto 24px;
+  padding: 1.05rem 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem .65rem;
+  color: rgba(255,255,255,.88);
+  background: linear-gradient(115deg, #102b3f, #087e8b);
+  border-top: 4px solid #d7a640;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(16,43,63,.14);
+  font: 700 .83rem/1.45 "Inter", "Aptos", "Segoe UI", Arial, sans-serif;
+  letter-spacing: .018em;
+  text-align: center;
+  box-sizing: border-box;
+}
+.gregori-footer .gf-author { color: #f4e2ad; font-weight: 900; }
+.gregori-footer .gf-dot { color: #d7a640; font-weight: 900; }
+@media (max-width: 640px) {
+  .gregori-footer {
+    width: 100%;
+    margin: 0;
+    padding: .95rem 1rem;
+    gap: .2rem .45rem;
+    border-radius: 0;
+    font-size: .76rem;
+  }
+}
+@media print {
+  .gregori-footer {
+    width: 100%;
+    margin: 18pt 0 0;
+    padding: 8pt 0 0;
+    color: #17212b;
+    background: transparent;
+    border: 0;
+    border-top: 1pt solid #102b3f;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .gregori-footer .gf-author,
+  .gregori-footer .gf-dot { color: #17212b; }
+}
+.greek-visual-block{
+  width:100%;
+  max-width:1150px;
+  margin:1.75rem auto 2rem;
+  padding:1.5rem;
+  box-sizing:border-box;
+  background:linear-gradient(135deg,#f9faf6,#eef6f2);
+  border:1px solid rgba(30,115,120,.18);
+  border-radius:24px;
+}
+
+.greek-visual-block > strong{
+  display:block;
+  color:#28306f;
+  font-size:1.05rem;
+  letter-spacing:.03em;
+}
+
+.greek-visual-block > p{
+  margin:.25rem 0 1rem;
+  color:#68747c;
+}
+/* ==================================================
+   MAPA DE CONTEXT · SA03
+   ================================================== */
+
+.greek-map{
+  width:100%;
+  max-width:1050px;
+  margin:1.5rem auto 0;
+  padding:1rem;
+  box-sizing:border-box;
+  background:#fff;
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(20,35,60,.12);
+}
+
+.greek-map img{
+  display:block;
+  width:100%;
+  height:auto;
+  max-height:620px;
+  object-fit:contain;
+  margin:auto;
+}
+
+.greek-map figcaption{
+  padding:.9rem .75rem .25rem;
+  text-align:center;
+  color:#596872;
+  line-height:1.45;
+}
+
+.greek-map figcaption em{
+  display:block;
+  color:#28306f;
+  font-size:1.05rem;
+  font-weight:600;
+  margin-bottom:.2rem;
+}
+
+.greek-map figcaption span{
+  display:block;
+  font-size:.92rem;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  if (document.querySelector(".gregori-footer")) return;
+
+  var footer = document.createElement("footer");
+  footer.className = "gregori-footer";
+  footer.setAttribute("role", "contentinfo");
+  footer.setAttribute("aria-label", "Autoria i identificació del recurs");
+  footer.innerHTML =
+    '<span class="gf-author">Miquel Gregori</span>' +
+    '<span class="gf-dot" aria-hidden="true">·</span>' +
+    '<span>Història de l’Art</span>' +
+    '<span class="gf-dot" aria-hidden="true">·</span>' +
+    '<span>2n de Batxillerat</span>' +
+    '<span class="gf-dot" aria-hidden="true">·</span>' +
+    '<span>IES Gregori Maians</span>' +
+    '<span class="gf-dot" aria-hidden="true">·</span>' +
+    '<span>Curs 2026–2027</span>';
+
+  var target = document.querySelector("#main-wrapper") ||
+               document.querySelector("#main") ||
+               document.querySelector("#content") ||
+               document.body;
+  target.appendChild(footer);
+});
+</script>
+
+</head>
+<body class="exe-export exe-web-site">
+<script>document.body.className+=" js"</script>
+<div class="exe-content exe-export pre-js siteNav-hidden"><a href="#20260905185818000068" id="skipNav">Skip to content</a> <nav id="siteNav">
+<ul>
+<li class="current-page-parent"> <a href="../index.html" class="main-node daddy">Inici</a>
+<ul class="other-section">
+<li> <a href="../html/1-creta-i-micenes.html" class="no-ch">1. Creta i Micenes</a>
+</li>
+<li> <a href="../html/2-polis-religio-i-esser-huma.html" class="no-ch">2. Polis, religió i ésser humà</a>
+</li>
+<li class="active"> <a href="../html/3-arquitectura-i-ordres.html" class="active no-ch">3. Arquitectura i ordres</a>
+</li>
+<li> <a href="../html/4-acropolis-i-parteno.html" class="no-ch">4. Acròpolis i Partenó</a>
+</li>
+<li> <a href="../html/5-del-kouros-al-canon.html" class="no-ch">5. Del kouros al cànon</a>
+</li>
+<li> <a href="../html/6-el-segle-iv-ac.html" class="no-ch">6. El segle IV aC</a>
+</li>
+<li> <a href="../html/7-hellenisme.html" class="no-ch">7. Hel·lenisme</a>
+</li>
+<li> <a href="../html/8-ceramica-i-teatre.html" class="no-ch">8. Ceràmica i teatre</a>
+</li>
+<li> <a href="../html/9-obres-pau.html" class="no-ch">9. Obres PAU</a>
+</li>
+<li> <a href="../html/10-museu-virtual.html" class="no-ch">10. Museu virtual</a>
+</li>
+<li> <a href="../html/avaluacio-i-guia.html" class="no-ch">Avaluació i guia</a>
+</li>
+</ul>
+</li>
+</ul>
+</nav><main id="20260905185818000068" class="page"> <div id="exe-client-search" data-block-order-string="Caja %e" data-no-results-string="Sin resultados.">
+</div>
+<header class="main-header"> <p class="page-counter"> <span class="page-counter-label">Pàgina </span><span class="page-counter-content"> <strong class="page-counter-current-page">4</strong><span class="page-counter-sep">/</span><strong class="page-counter-total">12</strong></span></p>
+
+<div class="package-header"><p class="package-title">SA03 · Grècia: la mesura de l’ésser humà</p></div>
+<div class="page-header"><h1 class="page-title">3. Arquitectura i ordres</h1></div>
+</header><div id="page-content-20260905185818000068" class="page-content">
+<article id="202609051858180000CC" class="box">
+<header class="box-head no-icon">
+<h1 class="box-title">Contingut</h1>
+<button class="box-toggle box-toggle-on" title="Toggle content">
+<span>Toggle content</span>
+</button></header>
+<div class="box-content">
+<div id="20260905185818000130" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;20260905185818000130&quot;}">
+<div class="exe-text-template"><div class="textIdeviceContent"><div class="exe-text-activity"><div><div class="sa grec"><div class="meta"><span class="tag">Sessió 3</span><span class="tag">Arquitectura</span><span class="tag">Modelatge + pràctica</span></div><h2>Construir amb proporció: temple i ordres</h2>
+<div class="repte"><strong>Objectiu:</strong> identificar tipologies, parts i ordres i explicar-ne els efectes visuals.</div>
+<div class="image-slot" role="note"><div class="slot-art" aria-hidden="true"><span></span><i></i><b></b></div><div><strong>DIAGRAMA DEL TEMPLE</strong><p>Planta d’un temple perípter + ordres dòric, jònic i corinti · imatge ampla</p><small>En editar eXeLearning: elimina este marcador i usa «Insereix/edita una imatge».</small></div></div>
+<p>El temple grec és una arquitectura arquitravada, concebuda com un volum exterior integrat en el santuari. La planta habitual disposa <em>pronaos</em>, <em>naos</em> o cel·la i <em>opistòdom</em>; segons la columnata pot ser <em>in antis</em>, pròstil, amfipròstil, perípter o dípter. L’alçat combina basament, columna i entaulament.</p>
+<table><tr><th>Ordre</th><th>Columna</th><th>Entaulament</th><th>Efecte</th></tr><tr><td>Dòric</td><td>Sense basa; fust robust, estriat i amb èntasi; capitell d’equí i àbac</td><td>Arquitrau llis; fris de tríglifs i mètopes</td><td>Claredat estructural, ritme i solidesa</td></tr><tr><td>Jònic</td><td>Amb basa; fust més esvelt; capitell de volutes</td><td>Arquitrau en bandes; fris continu possible</td><td>Continuïtat, elegància i detall</td></tr><tr><td>Corinti</td><td>Proporcions jòniques; capitell amb fulles d’acant</td><td>Semblant al jònic</td><td>Riquesa ornamental</td></tr></table>
+<details><summary>Correccions òptiques</summary><p>Els arquitectes modificaren lleugerament la geometria per aconseguir una percepció d’equilibri: curvatura de l’estilobat, inclinació de columnes, èntasi del fust, variació dels intercolumnis i reforç de les columnes angulars. No són «errors»: mostren que la proporció grega és visual i calculada.</p></details>
+<div class="alerta"><strong>Vocabulari PAU:</strong> estilobat, basa, fust, èntasi, capitell, arquitrau, fris, cornisa, frontó, cel·la, perístasi i sistema arquitravat.</div>
+<div class="quiz" id="q3"><p><strong>On apareixen els tríglifs i les mètopes?</strong></p><label><input type="radio" name="q3" value="0"> Al fris dòric</label><label><input type="radio" name="q3" value="1"> Al capitell corinti</label><label><input type="radio" name="q3" value="2"> A la basa jònica</label><button type="button" onclick="comprova('q3','0')">Comprova</button><button type="button" onclick="mostra('q3exp')">Pista raonada</button><p class="feedback" aria-live="polite"></p><p id="q3exp" hidden>El fris dòric alterna tríglifs i mètopes; el jònic pot presentar un fris continu.</p></div><div class="clau"><strong>Pràctica:</strong> dibuixa un alçat esquemàtic, etiqueta deu parts i explica dos efectes visuals.</div></div><script>
+function comprova(id,answer){const box=document.getElementById(id),chosen=box.querySelector('input:checked'),out=box.querySelector('.feedback');if(!chosen){out.textContent='Selecciona una resposta.';out.className='feedback ko';return}const ok=chosen.value===answer;out.textContent=ok?'Correcte. Continua!':'Encara no. Revisa la pista i torna-ho a provar.';out.className='feedback '+(ok?'ok':'ko')}
+function mostra(id){const x=document.getElementById(id);x.hidden=!x.hidden}
+</script></div></div></div></div>
+</div>
+</div>
+</article>
+</div></main><div class="nav-buttons">
+<a href="../html/2-polis-religio-i-esser-huma.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
+<a href="../html/4-acropolis-i-parteno.html" title="Següent" class="nav-button nav-button-right"><span>Següent</span></a>
+</div>
+<footer id="siteFooter"><div id="siteFooterContent"> <div id="packageLicense" class=""> <p> <span class="license-label">Llicència: </span><span class="license">Domini públic</span></p>
+</div>
+</div></footer>
+</div>
+<p id="made-with-eXe"> <a href="https://exelearning.net/" target="_blank" rel="noopener"> <span>Creat amb eXeLearning <span>(Nova finestra)</span></span></a></p>
+</body>
+</html>
