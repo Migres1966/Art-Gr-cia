@@ -763,6 +763,101 @@ body, #content, #main, #main-wrapper, #node-content,
   }
   .grec th, .grec td { min-width: 125px; padding: .68rem !important; }
 }
+
+/* ==================================================
+   SEQÜÈNCIA ESCULTÒRICA · SESSIONS 5–6
+   ================================================== */
+.grec .sculpture-sequence { margin: 1.7rem 0 2.4rem; }
+.grec .sculpture-intro {
+  margin-bottom: 1.2rem;
+  padding: 1.4rem 1.6rem;
+  color: #fff;
+  background: linear-gradient(120deg, rgba(16,43,63,.98), rgba(8,126,139,.94));
+  border-radius: 20px;
+  box-shadow: var(--ga-shadow-sm);
+}
+.grec .sculpture-intro h3 { margin: .25rem 0 .55rem; color: #fff; }
+.grec .sculpture-intro p { max-width: 850px; margin-bottom: 0; color: rgba(255,255,255,.88); }
+.grec .sequence-kicker,
+.grec .period-label {
+  display: inline-block;
+  font-size: .73rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+}
+.grec .sequence-kicker { color: var(--ga-gold-soft); }
+.grec .period-label { color: var(--ga-aegean); }
+.grec .sculpture-stage {
+  display: grid;
+  grid-template-columns: minmax(250px, 38%) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: center;
+  margin: 1.1rem 0;
+  padding: 1.35rem;
+  background: linear-gradient(145deg,#fff,#fbfaf6);
+  border: 1px solid var(--ga-line);
+  border-radius: 22px;
+  box-shadow: var(--ga-shadow-sm);
+}
+.grec .sculpture-stage.reverse .sculpture-photo { order: 2; }
+.grec .sculpture-stage.reverse .sculpture-text { order: 1; }
+.grec .sculpture-photo {
+  margin: 0 !important;
+  padding: .65rem;
+  overflow: hidden;
+  background: #f3f1eb;
+}
+.grec .sculpture-photo a {
+  display: block;
+  cursor: zoom-in;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #ece9e1;
+}
+.grec .sculpture-photo img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 410px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  margin: 0 auto !important;
+  border-radius: 12px !important;
+  transition: transform .25s ease;
+}
+.grec .sculpture-photo a:hover img { transform: scale(1.025); }
+.grec .sculpture-photo figcaption { padding: .75rem .45rem .25rem; text-align: center; }
+.grec .sculpture-photo figcaption strong {
+  display: block;
+  color: var(--ga-navy);
+  font-size: .95rem;
+  letter-spacing: normal;
+}
+.grec .sculpture-photo figcaption span {
+  display: block;
+  margin-top: .1rem;
+  color: var(--ga-muted);
+  font-size: .78rem;
+}
+.grec .sculpture-text h3 { margin: .25rem 0 .7rem; }
+.grec .observation {
+  margin-top: 1rem;
+  padding: .85rem 1rem;
+  background: #fff8e8;
+  border-left: 5px solid var(--ga-gold);
+  border-radius: 10px;
+  font-size: .9rem;
+}
+@media (max-width: 800px) {
+  .grec .sculpture-stage { grid-template-columns: 1fr !important; gap: 1rem; }
+  .grec .sculpture-stage.reverse .sculpture-photo,
+  .grec .sculpture-stage.reverse .sculpture-text { order: initial; }
+  .grec .sculpture-photo img { height: min(520px, 72vh) !important; }
+}
+@media (max-width: 480px) {
+  .grec .sculpture-stage { padding: .85rem; }
+  .grec .sculpture-photo img { height: 390px !important; }
+}
 </style>
 
 <!-- PEU DE PÀGINA AUTOMÀTIC -->
@@ -956,8 +1051,77 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="20260905185818000132" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;20260905185818000132&quot;}">
 <div class="exe-text-template"><div class="textIdeviceContent"><div class="exe-text-activity"><div><div class="sa grec"><div class="meta"><span class="tag">Sessions 5–6</span><span class="tag">Escultura arcaica i clàssica</span><span class="tag">Comparació + comentari</span></div><h2>Aprendre a representar el cos</h2>
 <div class="repte"><strong>Objectiu:</strong> explicar l’evolució de frontalitat, anatomia, suport i moviment entre els segles VI i V aC.</div>
-<div class="image-slot" role="note"><div class="slot-art" aria-hidden="true"><span></span><i></i><b></b></div><div><strong>SEQÜÈNCIA ESCULTÒRICA</strong><p>Kouros d’Anàvissos · Auriga de Delfos · Discòbol · Dorífor · quatre imatges</p><small>En editar eXeLearning: elimina este marcador i usa «Insereix/edita una imatge».</small></div></div>
-<div class="grid"><div class="card"><h3>Arcaic</h3><p>Els <em>kouroi</em> són jóvens nus, drets, frontals, amb una cama avançada, braços al costat del cos, anatomia esquemàtica i somriure arcaic. Reben influència egípcia, però s’emancipen del bloc i investiguen el nu masculí. Les <em>korai</em>, vestides, permeten explorar plecs i policromia.</p></div><div class="card"><h3>Estil sever</h3><p>Després de 480 aC disminuïx el somriure convencional. L’Auriga de Delfos combina quietud, plecs verticals i naturalisme contingut. El bronze permet braços separats, gestos i estructures més obertes.</p></div><div class="card"><h3>Clàssic</h3><p>Miró fixa un instant d’acció en el <em>Discòbol</em>; Policlet sistematitza proporció i <em>contrapposto</em> en el <em>Dorífor</em>. El naturalisme no és còpia: selecciona i ordena el cos segons un ideal.</p></div></div>
+<div class="sculpture-sequence">
+  <div class="sculpture-intro">
+    <span class="sequence-kicker">SEQÜÈNCIA ESCULTÒRICA</span>
+    <h3>De la rigidesa arcaica al cos ideal</h3>
+    <p>Compara les quatre obres i observa com l’escultura grega passa progressivament de la frontalitat i l’esquematisme a la ponderació, el moviment i la construcció ideal del cos humà.</p>
+  </div>
+
+  <article class="sculpture-stage">
+    <figure class="sculpture-photo">
+      <a href="../content/img/kouros-anavissos.webp" target="_blank" rel="noopener" title="Amplia el Kouros d’Anàvissos">
+        <img src="../content/img/kouros-anavissos.webp" alt="Kouros d’Anàvissos, escultura grega arcaica" loading="lazy">
+      </a>
+      <figcaption><strong>Kouros d’Anàvissos</strong><span>c. 530 aC · període arcaic</span></figcaption>
+    </figure>
+    <div class="sculpture-text">
+      <span class="period-label">01 · ARCAIC</span>
+      <h3>La figura encara mira de front</h3>
+      <p>Els <em>kouroi</em> representen jóvens nus, drets i frontals. Avancen una cama, però el pes del cos continua repartit de manera rígida i simètrica. Els braços baixen paral·lels al cos i l’anatomia es construïx mitjançant formes encara esquemàtiques.</p>
+      <p>El <strong>somriure arcaic</strong>, els cabells ordenats i l’organització geomètrica del cos revelen una representació convencional més que una observació naturalista completa.</p>
+      <div class="observation"><strong>Observa:</strong> frontalitat, simetria, cama avançada, punys tancats i somriure arcaic.</div>
+    </div>
+  </article>
+
+  <article class="sculpture-stage reverse">
+    <figure class="sculpture-photo">
+      <a href="../content/img/auriga-delfos.webp" target="_blank" rel="noopener" title="Amplia l’Auriga de Delfos">
+        <img src="../content/img/auriga-delfos.webp" alt="Auriga de Delfos, escultura grega de l’estil sever" loading="lazy">
+      </a>
+      <figcaption><strong>Auriga de Delfos</strong><span>c. 478–474 aC · estil sever</span></figcaption>
+    </figure>
+    <div class="sculpture-text">
+      <span class="period-label">02 · ESTIL SEVER</span>
+      <h3>La figura adquirix presència real</h3>
+      <p>Després de 480 aC desapareix progressivament el somriure arcaic. L’<strong>Auriga de Delfos</strong> manté una actitud continguda, però el rostre, els braços i el tractament anatòmic mostren una observació molt més natural.</p>
+      <p>El bronze facilita composicions més obertes i permet separar extremitats del cos. Els plecs verticals del <em>quitó</em> estabilitzen visualment la figura mentre el cap introduïx una lleu desviació respecte de l’eix frontal.</p>
+      <div class="observation"><strong>Observa:</strong> serenitat, absència de somriure arcaic, naturalisme contingut i ús del bronze.</div>
+    </div>
+  </article>
+
+  <article class="sculpture-stage">
+    <figure class="sculpture-photo">
+      <a href="../content/img/discobol-miro.webp" target="_blank" rel="noopener" title="Amplia el Discòbol">
+        <img src="../content/img/discobol-miro.webp" alt="Discòbol de Miró, escultura grega clàssica" loading="lazy">
+      </a>
+      <figcaption><strong>Discòbol de Miró</strong><span>c. 460–450 aC · classicisme inicial</span></figcaption>
+    </figure>
+    <div class="sculpture-text">
+      <span class="period-label">03 · MOVIMENT</span>
+      <h3>Miró captura un instant</h3>
+      <p>El <em>Discòbol</em> representa l’atleta en el moment de màxima tensió abans del llançament. El cos abandona definitivament la rigidesa frontal i es desplega en l’espai.</p>
+      <p>La composició descriu una complexa successió de corbes i diagonals. Malgrat l’esforç físic, el rostre conserva la serenitat característica de l’ideal clàssic.</p>
+      <div class="observation"><strong>Observa:</strong> torsió, diagonals, tensió muscular, moviment potencial i serenitat facial.</div>
+    </div>
+  </article>
+
+  <article class="sculpture-stage reverse">
+    <figure class="sculpture-photo">
+      <a href="../content/img/dorifor-policlet.webp" target="_blank" rel="noopener" title="Amplia el Dorífor">
+        <img src="../content/img/dorifor-policlet.webp" alt="Dorífor de Policlet, còpia romana d’un original grec" loading="lazy">
+      </a>
+      <figcaption><strong>Dorífor de Policlet</strong><span>c. 450–440 aC · còpia romana d’un original grec</span></figcaption>
+    </figure>
+    <div class="sculpture-text">
+      <span class="period-label">04 · CÀNON</span>
+      <h3>El cos es convertix en proporció</h3>
+      <p>Policlet convertix el cos humà en un sistema ordenat de relacions proporcionals. El <em>Dorífor</em> exemplifica el seu <strong>cànon</strong> i una nova manera d’organitzar l’equilibri.</p>
+      <p>Una cama suporta el pes mentre l’altra queda relaxada. Esta alternança afecta també pelvis, espatles i braços i origina el <strong><em>contrapposto</em></strong>: una figura estable, però amb una clara sensació de moviment potencial.</p>
+      <div class="observation"><strong>Observa:</strong> cama portant i cama lliure, inclinació de pelvis i espatles, equilibri creuat i proporció.</div>
+    </div>
+  </article>
+</div>
 <details><summary>Cànon i <em>contrapposto</em></summary><p>El cànon és un sistema de relacions proporcionals entre les parts. En Policlet, l’equilibri creuat entre cama portant i cama lliure, braç actiu i braç relaxat crea una figura estable però potencialment mòbil. El <em>contrapposto</em> inclina pelvis i espatles en sentits complementaris i supera la frontalitat arcaica.</p></details>
 <div class="quiz" id="q5"><p><strong>Quina innovació definix millor el Dorífor?</strong></p><label><input type="radio" name="q5" value="0"> Perspectiva atmosfèrica</label><label><input type="radio" name="q5" value="1"> Equilibri ponderat i cànon proporcional</label><label><input type="radio" name="q5" value="2"> Frontalitat rígida i somriure arcaic</label><button type="button" onclick="comprova('q5','1')">Comprova</button><button type="button" onclick="mostra('q5exp')">Pista raonada</button><p class="feedback" aria-live="polite"></p><p id="q5exp" hidden>Policlet convertix les relacions proporcionals i la ponderació corporal en una teoria visual del cos ideal.</p></div><div class="clau"><strong>Comparació:</strong> redacta tres canvis i una continuïtat entre el Kouros d’Anàvissos i el Dorífor.</div></div><script>
 function comprova(id,answer){const box=document.getElementById(id),chosen=box.querySelector('input:checked'),out=box.querySelector('.feedback');if(!chosen){out.textContent='Selecciona una resposta.';out.className='feedback ko';return}const ok=chosen.value===answer;out.textContent=ok?'Correcte. Continua!':'Encara no. Revisa la pista i torna-ho a provar.';out.className='feedback '+(ok?'ok':'ko')}
