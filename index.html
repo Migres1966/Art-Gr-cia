@@ -561,6 +561,22 @@ body {
 }
 .main-header .page-title { margin: 0 !important; }
 
+/* Títol propi de la portada: separat de la capçalera d’eXe */
+.grec > .home-resource-title {
+  max-width: 820px;
+  margin: .75rem 0 2rem !important;
+  color: var(--ga-navy);
+  font-size: clamp(1.65rem, 3.4vw, 2.65rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.035em;
+}
+
+.grec > .home-resource-title::after {
+  width: 72px;
+  height: 5px;
+  margin-top: .7rem;
+}
+
 /* Accessibilitat i adaptació */
 @media (max-width: 760px) {
   body { font-size: 16px; }
@@ -576,6 +592,10 @@ body {
   .grec .weight { min-height: auto; }
   .grec table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .grec .card:hover { transform: none; }
+  .grec > .home-resource-title {
+    margin: 1rem 0 1.65rem !important;
+    font-size: clamp(1.55rem, 8.5vw, 2.15rem) !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -969,7 +989,7 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="2026090518581800012D" class="idevice_node text" data-idevice-path="idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;2026090518581800012D&quot;}">
 <div class="exe-text-template">
     <div class="sa grec">
-<h2>SA03 · Grècia: la mesura de l’ésser humà</h2>
+<h2 class="home-resource-title">SA03 · Grècia: la mesura de l’ésser humà</h2>
 <section class="hero greekhero">
 <p class="small">IES Gregori Maians · Història de l’Art · 2n de Batxillerat</p>
 <h2>Mesura, polis i moviment</h2>
