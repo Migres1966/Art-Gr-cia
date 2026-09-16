@@ -1097,20 +1097,17 @@ document.addEventListener("DOMContentLoaded", function () {
 <p>L’art grec no pot entendre’s separat de la <strong>polis, la religió, l’educació, la competició, la ciutadania i els contactes mediterranis</strong>.</p>
 <p>Les formes artístiques expressen ideals, però també revelen qui podia participar d’aquests ideals i qui en quedava exclòs.</p>
 </div>
-<!-- ===================================================== --> <!-- PEU                                                   --> <!-- ===================================================== --><footer class="sa-footer">
-<p><strong>Miquel Gregori</strong> · Història de l’Art · 2n de Batxillerat · IES Gregori Maians</p>
-</footer></div>
-<!-- ======================================================= -->
-<p><br /></p>
-<!-- JAVASCRIPT                                              -->
-<p><br /></p>
-<!-- ======================================================= -->
-<p>
+<!-- ===================================================== --> <!-- ===================================================== -->
+<!-- FINAL DEL CONTINGUT DE LA SESSIÓ                      -->
+<!-- ===================================================== -->
+
+</div><!-- /.sa.grec -->
+
 <script>
-
 function comprova(id, answer) {
-
   const box = document.getElementById(id);
+  if (!box) return;
+
   const chosen = box.querySelector('input:checked');
   const out = box.querySelector('.feedback');
 
@@ -1127,74 +1124,19 @@ function comprova(id, answer) {
     : 'Encara no. Revisa la pista i torna-ho a provar.';
 
   out.className = 'feedback ' + (ok ? 'ok' : 'ko');
-
 }
-
 
 function mostra(id) {
+  const element = document.getElementById(id);
+  if (!element) return;
 
-  const x = document.getElementById(id);
-  x.hidden = !x.hidden;
-
+  element.hidden = !element.hidden;
 }
+</script>
 
-</script>
-</p>
-<div class="grid">
-<div class="card">
-<h3>Religió cívica</h3>
-<p>Els déus antropomòrfics compartixen passions humanes, però posseïxen immortalitat i poder. El temple és la casa simbòlica de la divinitat; el ritual col·lectiu, la processó i el sacrifici tenen lloc principalment a l’exterior.</p>
-</div>
-<div class="card">
-<h3>Ciutadania limitada</h3>
-<p>La participació política atenesa excloïa dones, esclaus i estrangers. L’ideal del ciutadà masculí condicionà el cànon corporal. Cal estudiar bellesa i humanisme sense ocultar les desigualtats.</p>
-</div>
-<div class="card">
-<h3>Àgon i <em>paideia</em></h3>
-<p>Competència, exercici, educació i vida pública promouen la representació del cos entrenat. L’art explora proporció, equilibri, acció i caràcter.</p>
-</div>
-</div>
-<h3>Etapes operatives</h3>
-<table>
-<tbody>
-<tr>
-<th>Etapa</th>
-<th>Cronologia orientativa</th>
-<th>Clau visual</th>
-</tr>
-<tr>
-<td>Arcaica</td>
-<td>s. VII–inicis V aC</td>
-<td>Frontalitat, tipus, experimentació i influència oriental</td>
-</tr>
-<tr>
-<td>Clàssica</td>
-<td>480–323 aC</td>
-<td>Equilibri, cànon, naturalisme idealitzat i moviment potencial</td>
-</tr>
-<tr>
-<td>Hel·lenística</td>
-<td>323–31 aC</td>
-<td>Pluralitat, emoció, teatralitat, edats i cossos diversos</td>
-</tr>
-</tbody>
-</table>
-<div class="quiz" id="q2">
-<p><strong>Quina afirmació és més rigorosa?</strong></p>
-<label><input type="radio" name="q2" value="0" /> L’art grec és purament europeu i sense préstecs.</label><label><input type="radio" name="q2" value="1" /> Tota la població atenesa participava en la democràcia.</label><label><input type="radio" name="q2" value="2" /> La polis, el ritual i una ciutadania restringida condicionaren la cultura visual.</label><button type="button" onclick="comprova('q2','2')">Comprova</button><button type="button" onclick="mostra('q2exp')">Pista raonada</button>
-<p class="feedback" aria-live="polite"><br /></p>
-<p id="q2exp" hidden="">Contextualitzar implica reconéixer els contactes mediterranis i els límits socials de la ciutadania.</p>
-</div>
-<div class="clau"><strong>Pregunta crítica:</strong> qui queda dins i fora de l’ideal corporal que anomenem «clàssic»?</div>
-<p>
-<script>
-function comprova(id,answer){const box=document.getElementById(id),chosen=box.querySelector('input:checked'),out=box.querySelector('.feedback');if(!chosen){out.textContent='Selecciona una resposta.';out.className='feedback ko';return}const ok=chosen.value===answer;out.textContent=ok?'Correcte. Continua!':'Encara no. Revisa la pista i torna-ho a provar.';out.className='feedback '+(ok?'ok':'ko')}
-function mostra(id){const x=document.getElementById(id);x.hidden=!x.hidden}
-</script>
-</p>
-</div>
-</div>
-</div>
+</div><!-- /.exe-text-template -->
+</div><!-- /iDevice -->
+</div><!-- /.box-content -->
 </article>
 </div></main><div class="nav-buttons">
 <a href="../html/1-creta-i-micenes.html" title="Anterior" class="nav-button nav-button-left"><span>Anterior</span></a>
