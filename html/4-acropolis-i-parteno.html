@@ -762,6 +762,77 @@ body, #content, #main, #main-wrapper, #node-content,
     text-align: center !important;
   }
   .grec th, .grec td { min-width: 125px; padding: .68rem !important; }
+}/* Acròpolis · imatge de la sessió 4 */
+.grec .acropolis-slot {
+  grid-template-columns: minmax(300px, 58%) minmax(220px, 1fr);
+  align-items: center;
+  gap: 1.6rem;
+  padding: 1.25rem;
+}
+
+.grec .acropolis-image {
+  width: 100%;
+  margin: 0;
+  padding: .55rem;
+  background: #fff;
+  border: 1px solid var(--ga-line);
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(16,43,63,.12);
+}
+
+.grec .acropolis-image a {
+  display: block;
+  cursor: zoom-in;
+}
+
+.grec .acropolis-image img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 12px;
+  transition: transform .25s ease, filter .25s ease;
+}
+
+.grec .acropolis-image a:hover img {
+  transform: scale(1.015);
+  filter: contrast(1.03);
+}
+
+.grec .acropolis-image figcaption {
+  padding: .7rem .5rem .25rem;
+  text-align: center;
+  color: var(--ga-muted);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.grec .acropolis-image figcaption strong {
+  display: block;
+  margin-top: .25rem;
+  color: var(--ga-aegean);
+  font-size: .78rem;
+  letter-spacing: normal;
+}
+
+.grec .acropolis-info > strong {
+  color: var(--ga-navy);
+  font-size: 1.12rem;
+}
+
+.grec .acropolis-info p {
+  margin: .5rem 0 .7rem;
+}
+
+.grec .acropolis-info small {
+  display: block;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .grec .acropolis-slot {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 
