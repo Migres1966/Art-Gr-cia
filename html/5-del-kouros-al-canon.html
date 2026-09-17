@@ -1002,6 +1002,152 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+
+<style id="sculpture-lightbox-styles">
+/* Visor d'imatges: ampliació nítida, accessible i adaptable */
+.grec .sculpture-photo a{
+  position:relative;
+  outline-offset:4px;
+}
+.grec .sculpture-photo a::after{
+  content:"↗  Amplia";
+  position:absolute;
+  right:.65rem;
+  bottom:.65rem;
+  padding:.42rem .72rem;
+  color:#fff;
+  background:rgba(16,43,63,.88);
+  border:1px solid rgba(255,255,255,.35);
+  border-radius:999px;
+  box-shadow:0 4px 14px rgba(0,0,0,.2);
+  font:800 .75rem/1 "Inter",sans-serif;
+  letter-spacing:.02em;
+  pointer-events:none;
+  backdrop-filter:blur(6px);
+}
+.grec .sculpture-photo a:hover img{transform:none!important;}
+.sculpture-lightbox{
+  width:100vw;
+  max-width:none;
+  height:100dvh;
+  max-height:none;
+  margin:0;
+  padding:0;
+  overflow:hidden;
+  color:#fff;
+  background:rgba(5,15,23,.96);
+  border:0;
+}
+.sculpture-lightbox::backdrop{background:rgba(5,15,23,.88);backdrop-filter:blur(8px);}
+.sculpture-lightbox[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto;}
+.sculpture-lightbox__bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.8rem clamp(1rem,3vw,2rem);
+  background:rgba(16,43,63,.92);
+  border-bottom:1px solid rgba(255,255,255,.16);
+}
+.sculpture-lightbox__title{font:800 clamp(.9rem,2vw,1.08rem)/1.3 "Manrope","Inter",sans-serif;}
+.sculpture-lightbox__actions{display:flex;gap:.55rem;}
+.sculpture-lightbox button{
+  min-height:40px;
+  margin:0!important;
+  padding:.55rem .85rem;
+  color:#fff!important;
+  background:#087e8b;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:10px;
+  font:800 .82rem "Inter",sans-serif;
+  cursor:pointer;
+}
+.sculpture-lightbox button:hover{background:#0aa6a6;}
+.sculpture-lightbox__stage{
+  min-height:0;
+  overflow:auto;
+  display:grid;
+  place-items:center;
+  padding:clamp(.75rem,2vw,1.5rem);
+  overscroll-behavior:contain;
+}
+.sculpture-lightbox__stage img{
+  display:block;
+  width:auto;
+  height:auto;
+  max-width:100%;
+  max-height:calc(100dvh - 150px);
+  object-fit:contain;
+  image-rendering:auto;
+  transform-origin:center;
+  transition:transform .18s ease;
+  filter:drop-shadow(0 16px 34px rgba(0,0,0,.38));
+}
+.sculpture-lightbox.is-zoomed .sculpture-lightbox__stage{
+  display:block;
+  cursor:zoom-out;
+}
+.sculpture-lightbox.is-zoomed .sculpture-lightbox__stage img{
+  max-width:none;
+  max-height:none;
+  margin:auto;
+  transform:scale(1.35);
+}
+.sculpture-lightbox__help{
+  margin:0;
+  padding:.65rem 1rem;
+  color:rgba(255,255,255,.74);
+  background:rgba(16,43,63,.92);
+  border-top:1px solid rgba(255,255,255,.12);
+  font-size:.78rem;
+  text-align:center;
+}
+@media(max-width:640px){
+  .grec .sculpture-photo a::after{right:.45rem;bottom:.45rem;}
+  .sculpture-lightbox__bar{padding:.65rem .75rem;}
+  .sculpture-lightbox__actions button:first-child{display:none;}
+  .sculpture-lightbox__stage{padding:.5rem;}
+  .sculpture-lightbox__stage img{max-height:calc(100dvh - 132px);}
+  .sculpture-lightbox.is-zoomed .sculpture-lightbox__stage img{transform:scale(1.65);transform-origin:top center;}
+}
+@media(prefers-reduced-motion:reduce){
+  .sculpture-lightbox__stage img{transition:none;}
+}
+</style>
+<script id="sculpture-lightbox-script">
+document.addEventListener("DOMContentLoaded",function(){
+  var links=[].slice.call(document.querySelectorAll(".sculpture-photo a"));
+  if(!links.length||typeof HTMLDialogElement==="undefined")return;
+  var dialog=document.createElement("dialog");
+  dialog.className="sculpture-lightbox";
+  dialog.setAttribute("aria-label","Visor ampliat d’escultures");
+  dialog.innerHTML='<div class="sculpture-lightbox__bar"><span class="sculpture-lightbox__title"></span><div class="sculpture-lightbox__actions"><button type="button" data-action="zoom" aria-pressed="false">Zoom 135%</button><button type="button" data-action="close" aria-label="Tanca la imatge ampliada">Tanca ×</button></div></div><div class="sculpture-lightbox__stage" title="Clica per activar o desactivar el zoom"><img alt=""></div><p class="sculpture-lightbox__help">Clica la imatge per ampliar · arrossega la vista amb les barres de desplaçament · tecla Esc per tancar</p>';
+  document.body.appendChild(dialog);
+  var view=dialog.querySelector("img"),title=dialog.querySelector(".sculpture-lightbox__title"),zoom=dialog.querySelector("[data-action=zoom]");
+  function setZoom(on){
+    dialog.classList.toggle("is-zoomed",on);
+    zoom.setAttribute("aria-pressed",String(on));
+    zoom.textContent=on?"Ajusta a pantalla":"Zoom 135%";
+  }
+  links.forEach(function(link){
+    link.addEventListener("click",function(e){
+      e.preventDefault();
+      var source=link.querySelector("img");
+      view.src=link.href;
+      view.alt=source?source.alt:"Escultura ampliada";
+      title.textContent=(link.closest("figure").querySelector("figcaption strong")||source).textContent||view.alt;
+      setZoom(false);
+      dialog.showModal();
+    });
+  });
+  dialog.querySelector("[data-action=close]").addEventListener("click",function(){dialog.close();});
+  zoom.addEventListener("click",function(){setZoom(!dialog.classList.contains("is-zoomed"));});
+  dialog.querySelector(".sculpture-lightbox__stage").addEventListener("click",function(){setZoom(!dialog.classList.contains("is-zoomed"));});
+  dialog.addEventListener("click",function(e){if(e.target===dialog)dialog.close();});
+  dialog.addEventListener("close",function(){view.removeAttribute("src");setZoom(false);});
+});
+</script>
+
 </head>
 <body class="exe-export exe-web-site">
 <script>document.body.className+=" js"</script>
