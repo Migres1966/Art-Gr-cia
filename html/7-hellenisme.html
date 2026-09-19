@@ -907,6 +907,196 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
 
+<style id="hellenistic-gallery-styles">
+/* Galeria d'obres hel·lenístiques */
+.grec .hellenistic-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.35rem;
+  margin: 1.45rem 0 2rem;
+}
+.grec .hellenistic-card {
+  margin: 0;
+  padding: .7rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, #fff, #f4f1e9);
+  border: 1px solid var(--ga-line);
+  border-radius: var(--ga-radius);
+  box-shadow: var(--ga-shadow-sm);
+}
+.grec .hellenistic-card.wide { grid-column: 1 / -1; }
+.grec .hellenistic-card a {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #171717;
+  border-radius: 14px;
+  cursor: zoom-in;
+  outline-offset: 4px;
+}
+.grec .hellenistic-card a::after {
+  content: "↗  Amplia";
+  position: absolute;
+  right: .65rem;
+  bottom: .65rem;
+  padding: .42rem .72rem;
+  color: #fff;
+  background: rgba(16, 43, 63, .9);
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: 999px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .2);
+  font: 800 .75rem/1 "Inter", sans-serif;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+.grec .hellenistic-card img {
+  display: block;
+  width: 100%;
+  height: min(610px, 65vw);
+  object-fit: contain;
+  object-position: center;
+  border-radius: 13px;
+}
+.grec .hellenistic-card.wide img { height: min(500px, 55vw); }
+.grec .hellenistic-card figcaption {
+  padding: .85rem .55rem .35rem;
+  text-align: center;
+}
+.grec .hellenistic-card figcaption strong {
+  display: block;
+  color: var(--ga-navy);
+  font-size: .98rem;
+}
+.grec .hellenistic-card figcaption span {
+  display: block;
+  margin-top: .15rem;
+  color: var(--ga-muted);
+  font-size: .8rem;
+}
+.hellenistic-lightbox {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+  background: rgba(5, 15, 23, .96);
+  border: 0;
+}
+.hellenistic-lightbox::backdrop { background: rgba(5, 15, 23, .88); backdrop-filter: blur(8px); }
+.hellenistic-lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto; }
+.hellenistic-lightbox__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: .8rem clamp(1rem, 3vw, 2rem);
+  background: rgba(16, 43, 63, .92);
+  border-bottom: 1px solid rgba(255, 255, 255, .16);
+}
+.hellenistic-lightbox__title { font: 800 clamp(.9rem, 2vw, 1.08rem)/1.3 "Manrope", "Inter", sans-serif; }
+.hellenistic-lightbox__actions { display: flex; gap: .55rem; }
+.hellenistic-lightbox button {
+  min-height: 40px;
+  margin: 0 !important;
+  padding: .55rem .85rem;
+  color: #fff !important;
+  background: #087e8b;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 10px;
+  font: 800 .82rem "Inter", sans-serif;
+  cursor: pointer;
+}
+.hellenistic-lightbox button:hover { background: #0aa6a6; }
+.hellenistic-lightbox__stage {
+  min-height: 0;
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: clamp(.75rem, 2vw, 1.5rem);
+  overscroll-behavior: contain;
+}
+.hellenistic-lightbox__stage img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: calc(100dvh - 150px);
+  object-fit: contain;
+  transform-origin: center;
+  transition: transform .18s ease;
+  filter: drop-shadow(0 16px 34px rgba(0, 0, 0, .38));
+}
+.hellenistic-lightbox.is-zoomed .hellenistic-lightbox__stage { display: block; cursor: zoom-out; }
+.hellenistic-lightbox.is-zoomed .hellenistic-lightbox__stage img {
+  max-width: none;
+  max-height: none;
+  margin: auto;
+  transform: scale(1.35);
+}
+.hellenistic-lightbox__help {
+  margin: 0;
+  padding: .65rem 1rem;
+  color: rgba(255, 255, 255, .74);
+  background: rgba(16, 43, 63, .92);
+  border-top: 1px solid rgba(255, 255, 255, .12);
+  font-size: .78rem;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .grec .hellenistic-gallery { grid-template-columns: 1fr; }
+  .grec .hellenistic-card.wide { grid-column: auto; }
+  .grec .hellenistic-card img,
+  .grec .hellenistic-card.wide img { height: auto; max-height: 640px; }
+  .hellenistic-lightbox__bar { padding: .65rem .75rem; }
+  .hellenistic-lightbox__actions button:first-child { display: none; }
+  .hellenistic-lightbox__stage { padding: .5rem; }
+  .hellenistic-lightbox__stage img { max-height: calc(100dvh - 132px); }
+  .hellenistic-lightbox.is-zoomed .hellenistic-lightbox__stage img { transform: scale(1.65); transform-origin: top center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hellenistic-lightbox__stage img { transition: none; }
+}
+</style>
+<script id="hellenistic-lightbox-script">
+document.addEventListener("DOMContentLoaded", function () {
+  var links = [].slice.call(document.querySelectorAll(".hellenistic-card a"));
+  if (!links.length || typeof HTMLDialogElement === "undefined") return;
+  var dialog = document.createElement("dialog");
+  dialog.className = "hellenistic-lightbox";
+  dialog.setAttribute("aria-label", "Visor ampliat d’obres hel·lenístiques");
+  dialog.innerHTML = '<div class="hellenistic-lightbox__bar"><span class="hellenistic-lightbox__title"></span><div class="hellenistic-lightbox__actions"><button type="button" data-action="zoom" aria-pressed="false">Zoom 135%</button><button type="button" data-action="close" aria-label="Tanca la imatge ampliada">Tanca ×</button></div></div><div class="hellenistic-lightbox__stage" title="Clica per activar o desactivar el zoom"><img alt=""></div><p class="hellenistic-lightbox__help">Clica la imatge per ampliar · arrossega la vista amb les barres de desplaçament · tecla Esc per tancar</p>';
+  document.body.appendChild(dialog);
+  var view = dialog.querySelector("img");
+  var title = dialog.querySelector(".hellenistic-lightbox__title");
+  var zoom = dialog.querySelector("[data-action=zoom]");
+  function setZoom(on) {
+    dialog.classList.toggle("is-zoomed", on);
+    zoom.setAttribute("aria-pressed", String(on));
+    zoom.textContent = on ? "Ajusta a pantalla" : "Zoom 135%";
+  }
+  links.forEach(function (link) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      var source = link.querySelector("img");
+      var caption = link.closest("figure").querySelector("figcaption strong");
+      view.src = link.href;
+      view.alt = source ? source.alt : "Obra hel·lenística ampliada";
+      title.textContent = caption ? caption.textContent : view.alt;
+      setZoom(false);
+      dialog.showModal();
+    });
+  });
+  dialog.querySelector("[data-action=close]").addEventListener("click", function () { dialog.close(); });
+  zoom.addEventListener("click", function () { setZoom(!dialog.classList.contains("is-zoomed")); });
+  dialog.querySelector(".hellenistic-lightbox__stage").addEventListener("click", function () { setZoom(!dialog.classList.contains("is-zoomed")); });
+  dialog.addEventListener("click", function (event) { if (event.target === dialog) dialog.close(); });
+  dialog.addEventListener("close", function () { view.removeAttribute("src"); setZoom(false); });
+});
+</script>
+
 </head>
 <body class="exe-export exe-web-site">
 <script>document.body.className+=" js"</script>
@@ -956,7 +1146,26 @@ document.addEventListener("DOMContentLoaded", function () {
 <div id="20260905185818000134" class="idevice_node text" data-idevice-path="../idevices/text/" data-idevice-type="text" data-idevice-component-type="json" data-idevice-json-data="{&quot;ideviceId&quot;:&quot;20260905185818000134&quot;}">
 <div class="exe-text-template"><div class="textIdeviceContent"><div class="exe-text-activity"><div><div class="sa grec"><div class="meta"><span class="tag">Sessió 8</span><span class="tag">Art hel·lenístic</span><span class="tag">Comentari comparat</span></div><h2>Un món ampliat: emoció, teatre i diversitat</h2>
 <div class="repte"><strong>Objectiu:</strong> entendre l’hel·lenisme com una pluralitat de llenguatges, no com una simple decadència del classicisme.</div>
-<div class="image-slot" role="note"><div class="slot-art" aria-hidden="true"><span></span><i></i><b></b></div><div><strong>DRAMA I MOVIMENT</strong><p>Victòria de Samotràcia · Venus de Milo · fris de Pèrgam</p><small>En editar eXeLearning: elimina este marcador i usa «Insereix/edita una imatge».</small></div></div>
+<div class="hellenistic-gallery" aria-label="Obres destacades de l’art hel·lenístic">
+  <figure class="hellenistic-card">
+    <a href="../content/img/victoria-samotracia.webp" target="_blank" rel="noopener" title="Amplia la Victòria de Samotràcia">
+      <img src="../content/img/victoria-samotracia.webp" alt="Victòria de Samotràcia, escultura hel·lenística alada" loading="lazy">
+    </a>
+    <figcaption><strong>Victòria de Samotràcia</strong><span>c. 190 aC · Museu del Louvre</span></figcaption>
+  </figure>
+  <figure class="hellenistic-card">
+    <a href="../content/img/venus-milo.webp" target="_blank" rel="noopener" title="Amplia la Venus de Milo">
+      <img src="../content/img/venus-milo.webp" alt="Venus de Milo, escultura grega hel·lenística" loading="lazy">
+    </a>
+    <figcaption><strong>Venus de Milo</strong><span>c. 130–100 aC · Museu del Louvre</span></figcaption>
+  </figure>
+  <figure class="hellenistic-card wide">
+    <a href="../content/img/fris-pergam.webp" target="_blank" rel="noopener" title="Amplia el fris de l’altar de Zeus a Pèrgam">
+      <img src="../content/img/fris-pergam.webp" alt="Atena i Alcioneu al fris de la Gigantomàquia de l’altar de Zeus a Pèrgam" loading="lazy">
+    </a>
+    <figcaption><strong>Fris de l’altar de Zeus a Pèrgam</strong><span>c. 180–160 aC · Gigantomàquia</span></figcaption>
+  </figure>
+</div>
 <p>Després de les conquestes d’Alexandre (mort el 323 aC), els regnes hel·lenístics connecten Grècia, Egipte i Àsia. Les corts, santuaris i ciutats competixen mitjançant programes monumentals. L’espectador és implicat per diagonals, profunditat, efectes de llum, textures i emocions intenses.</p>
 <div class="grid"><div class="card"><h3>Victòria de Samotràcia</h3><p>Figura alada concebuda per a un santuari: la roba mullada s’adherix al cos i el mantell vibra contra un vent imaginari. L’emplaçament sobre una proa i l’obertura diagonal intensifiquen l’aparició.</p></div><div class="card"><h3>Venus de Milo</h3><p>Combina serenitat classicista i torsió hel·lenística. El drapejat concentra contrastos de textura i estabilitza la figura mentre el tors gira.</p></div><div class="card"><h3>Altar de Zeus a Pèrgam</h3><p>En la Gigantomàquia, cossos quasi exempts envaïxen l’escala. Diagonals, clarobscur, dolor i contacte entre figures convertixen el mite en exaltació dinàstica.</p></div></div>
 <div class="alerta"><strong>Evita:</strong> reduir tot l’hel·lenisme a «barroc». Hi coexistixen dramatisme, classicisme, realisme quotidià, infància, vellesa, comicitat i exotisme.</div>
